@@ -146,8 +146,8 @@ export const lessonsAPI = {
     const response = await api.get(`/api/lessons/${id}`);
     return response.data;
   },
-  start: async (studentId: number, teacherId: number) => {
-    const response = await api.post('/api/lessons/start', { student_id: studentId, teacher_id: teacherId });
+  start: async (data: { student_id: number; teacher_id: number }) => {
+    const response = await api.post('/api/lessons/start', data);
     return response.data;
   },
   stop: async (lessonId: number) => {
