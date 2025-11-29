@@ -94,6 +94,8 @@ export default function StudentsPage() {
       fee_amount: student.fee_amount.toString(),
       fee_status: student.fee_status,
       notes: student.notes || '',
+        username: student.username || '',
+  password: student.password || '',
     });
     setIsModalOpen(true);
   };
