@@ -114,7 +114,7 @@ export default function TeacherDashboardPage() {
     }
     setStartingLesson(true);
     try {
-      const lesson = await lessonsAPI.start(studentId, teacherId);
+      const lesson = await lessonsAPI.start({ student_id: studentId, teacher_id: teacherId });
       // Redirect to video class page
       window.location.href = `/video-class/${lesson.id}`;
     } catch (error) {

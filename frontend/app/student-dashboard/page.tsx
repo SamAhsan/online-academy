@@ -125,7 +125,7 @@ export default function StudentDashboardPage() {
 
     setStartingLesson(true);
     try {
-      const lesson = await lessonsAPI.start(studentId, teacherId);
+      const lesson = await lessonsAPI.start({ student_id: studentId, teacher_id: teacherId });
       router.push(`/video-class/${lesson.id}`);
     } catch (error) {
       console.error('Failed to start lesson:', error);
